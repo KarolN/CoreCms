@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Cms.Model\CoreCms.Cms.Model.csproj">
+      <Project>{93E15CCD-F3D8-4C37-99A0-2A738E2988C9}</Project>
+      <Name>CoreCms.Cms.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
