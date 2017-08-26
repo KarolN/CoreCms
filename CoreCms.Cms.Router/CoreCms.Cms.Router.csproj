@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\..\..\.nuget\packages\microsoft.aspnetcore.routing.abstractions\1.1.2\lib\netstandard1.3\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="1.1.2" />
+    <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Cms.ContentTreeHandler.Contract\CoreCms.Cms.ContentTreeHandler.Contract.csproj">
+      <Project>{1DB8FC39-E523-4E0C-A74E-43A3472E708E}</Project>
+      <Name>CoreCms.Cms.ContentTreeHandler.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

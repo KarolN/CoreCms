@@ -5,7 +5,7 @@ namespace CoreCms.Cms.ContentTreeHandler.Contract
 {
     public interface IContentTreeHandler
     {
-        ContentNode GetContentNodeForUrl(string url);
+        ContentNode GetContentNodeForUrl(string path);
 
         string ResolveContentUrl(Guid contentNodeId);
 

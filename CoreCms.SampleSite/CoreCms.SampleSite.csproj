@@ -1,17 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
-
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
-
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
+    <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
   </ItemGroup>
-
-
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Cms.ContentTreeHandler\CoreCms.Cms.ContentTreeHandler.csproj" />
+    <ProjectReference Include="..\CoreCms.Cms.Router\CoreCms.Cms.Router.csproj" />
+    <ProjectReference Include="..\CoreCms.DataAccess\CoreCms.DataAccess.csproj" />
+  </ItemGroup>
 </Project>

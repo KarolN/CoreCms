@@ -12,4 +12,9 @@
       <Name>CoreCms.DataAccess.Contract</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap, Version=4.5.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\.nuget\packages\structuremap\4.5.0\lib\netstandard1.5\StructureMap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

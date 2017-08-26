@@ -5,4 +5,10 @@
   <ItemGroup>
     <PackageReference Include="MongoDB.Bson" Version="2.4.4" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Common.Constants\CoreCms.Common.Constants.csproj">
+      <Project>{F4135D47-0EAF-4C63-99FF-44628684B31E}</Project>
+      <Name>CoreCms.Common.Constants</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

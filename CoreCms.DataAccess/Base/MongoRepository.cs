@@ -42,14 +42,16 @@ namespace CoreCms.DataAccess.Base
 
         public Guid Insert(T entity)
         {
+            var instance = new T();
             entity.Id = Guid.NewGuid();
-            _db.GetCollection<T>(entity.CollectionName).InsertOne(entity);
+            _db.GetCollection<T>(instance.CollectionName).InsertOne(entity);
             return entity.Id;
         }
 
         public void Update(T entity)
         {
-            _db.GetCollection<T>(entity.CollectionName).ReplaceOne(x => x.Id ==  entity.Id, entity);
+            var instance = new T();
+            _db.GetCollection<T>(instance.CollectionName).ReplaceOne(x => x.Id ==  entity.Id, entity);
         }
 
         public void Remove(Guid id)
@@ -60,8 +62,9 @@ namespace CoreCms.DataAccess.Base
 
         public async Task<Guid> InsertAsync(T entity)
         {
+            var instance = new T();
             entity.Id = Guid.NewGuid();
-            await _db.GetCollection<T>(entity.CollectionName).InsertOneAsync(entity);
+            await _db.GetCollection<T>(instance.CollectionName).InsertOneAsync(entity);
             return entity.Id;
         }
 
