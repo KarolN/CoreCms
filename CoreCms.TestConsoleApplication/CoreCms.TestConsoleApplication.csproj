@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CoreCms.Cms.ContentTreeHandler.Contract\CoreCms.Cms.ContentTreeHandler.Contract.csproj" />
     <ProjectReference Include="..\CoreCms.Cms.ContentTreeHandler\CoreCms.Cms.ContentTreeHandler.csproj" />
+    <ProjectReference Include="..\CoreCms.Cms.Modules.Pages\CoreCms.Cms.Modules.Pages.csproj" />
     <ProjectReference Include="..\CoreCms.DataAccess.Contract\CoreCms.DataAccess.Contract.csproj" />
     <ProjectReference Include="..\CoreCms.DataAccess\CoreCms.DataAccess.csproj" />
   </ItemGroup>

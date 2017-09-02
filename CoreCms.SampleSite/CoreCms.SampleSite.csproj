@@ -13,6 +13,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoreCms.Cms.ContentTreeHandler\CoreCms.Cms.ContentTreeHandler.csproj" />
+    <ProjectReference Include="..\CoreCms.Cms.Modules.Pages\CoreCms.Cms.Modules.Pages.csproj" />
     <ProjectReference Include="..\CoreCms.Cms.Router\CoreCms.Cms.Router.csproj" />
     <ProjectReference Include="..\CoreCms.DataAccess\CoreCms.DataAccess.csproj" />
   </ItemGroup>

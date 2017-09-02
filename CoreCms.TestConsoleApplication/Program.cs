@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using CoreCms.Cms.ContentTreeHandler;
-using CoreCms.Cms.Model.Content.ContentTree;
+using CoreCms.Cms.Modules.Pages.Model;
 using CoreCms.DataAccess.Base;
 using MongoDB.Driver;
 
@@ -13,10 +12,13 @@ namespace CoreCms.TestConsoleApplication
         {
             var client = new MongoClient("mongodb://localhost:27017");
             var db = client.GetDatabase("test");
-            var repo = new MongoRepository<ContentNode>(db);
-            var tree = new DefaultHierarchicContentTreeHandler(repo);
-
-            var page = tree.GetContentNodeForUrl("/ArticlePage1");
+            var repo = new MongoRepository<PageTreeNode>(db);
+            var root = new PageTreeNode(){Name = "RootPage",Children = new List<PageTreeNode>
+            {
+                new PageTreeNode(){Name = "page1"},
+                new PageTreeNode(){Name = "page2"}
+            }};
+            repo.Insert(root);
             
             Console.WriteLine("Hello World!");
         }
