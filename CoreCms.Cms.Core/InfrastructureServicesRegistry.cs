@@ -10,6 +10,7 @@ namespace CoreCms.Cms.Core
         public InfrastructureServicesRegistry()
         {
             For<ICmsControllerActionDescriptorsProvider>().Use<CmsControllerActionDescriptorsProvider>();
+            For<IContentLoader>().Use<ContentLoader>();
         }
     }
 }

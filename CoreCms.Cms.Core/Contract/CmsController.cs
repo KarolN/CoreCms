@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreCms.Cms.Core.Contract
 {
-    public class CmsController<TModel> : Controller where TModel : Content
+    public abstract class CmsController<TModel> : Controller where TModel : Content
     {
-        
+        public abstract IActionResult Index(TModel contentModel);
     }
 }

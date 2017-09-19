@@ -1,5 +1,6 @@
 ﻿using System;
 using CoreCms.Cms.Core.Contract;
+using CoreCms.Cms.Core.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,7 +28,10 @@ namespace CoreCms.SampleSite
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(ContentModelBindFilter));
+            });
 
             var container = new Container();
             container.Configure(cfg =>

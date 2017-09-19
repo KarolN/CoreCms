@@ -10,7 +10,7 @@ namespace CoreCms.SampleSite.Controllers
 {
     public class HomeController : CmsController<HomePage>
     {
-        public IActionResult Index()
+        public override IActionResult Index(HomePage contentModel)
         {
             return View();
         }

@@ -6,9 +6,9 @@ namespace CoreCms.SampleSite.Controllers
 {
     public class ArticleController : CmsController<ArticlePage>
     {
-        public IActionResult Index()
+        public override IActionResult Index(ArticlePage contentModel)
         {
-            return View();
+            return View(contentModel);
         }
     }
 }
