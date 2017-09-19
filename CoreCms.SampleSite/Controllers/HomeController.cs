@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreCms.Cms.Core.Contract;
+using CoreCms.SampleSite.Pages;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreCms.SampleSite.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : CmsController<HomePage>
     {
         public IActionResult Index()
         {

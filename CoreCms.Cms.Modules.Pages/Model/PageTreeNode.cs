@@ -8,6 +8,7 @@ namespace CoreCms.Cms.Modules.Pages.Model
     {
         public string Name { get; set; }
         public Guid PageId { get; set; }
+        public string PageType { get; set; }
         public List<PageTreeNode> Children { get; set; }
     }
 }

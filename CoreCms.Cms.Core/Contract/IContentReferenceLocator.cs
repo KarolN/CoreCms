@@ -2,7 +2,7 @@
 
 namespace CoreCms.Cms.Core.Contract
 {
-    public interface IContentReferenceLocator
+    public interface IContentReferenceLocator : ICmsModuleService
     {
         ContentReference LocateFromUrl(string url);
     }

@@ -6,7 +6,7 @@ using CoreCms.Cms.Modules.Pages.Model;
 
 namespace CoreCms.Cms.Modules.Pages.Services
 {
-    public class PageReferenceLocator : IContentReferenceLocator
+    public class PageReferenceLocator : BasePageService, IContentReferenceLocator
     {
         private readonly IPageTreeRepository _pageTreeRepository;
 
@@ -34,7 +34,7 @@ namespace CoreCms.Cms.Modules.Pages.Services
             {
                 return null;
             }
-            var contentReference = new PageReference{Name = currentNode.Name, PageId = currentNode.PageId};
+            var contentReference = new PageReference{Name = currentNode.Name, PageId = currentNode.PageId, PageType = currentNode.PageType};
             return contentReference;
         }
     }

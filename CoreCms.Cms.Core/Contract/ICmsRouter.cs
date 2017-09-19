@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Routing;
 
-namespace CoreCms.Cms.Router.RouterProvider
+namespace CoreCms.Cms.Core.Contract
 {
     public interface ICmsRouter : IRouter
     {

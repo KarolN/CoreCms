@@ -13,10 +13,10 @@ namespace CoreCms.TestConsoleApplication
             var client = new MongoClient("mongodb://localhost:27017");
             var db = client.GetDatabase("test");
             var repo = new MongoRepository<PageTreeNode>(db);
-            var root = new PageTreeNode(){Name = "RootPage",Children = new List<PageTreeNode>
+            var root = new PageTreeNode(){Name = "RootPage", PageType = "HomePage",Children = new List<PageTreeNode>
             {
-                new PageTreeNode(){Name = "page1"},
-                new PageTreeNode(){Name = "page2"}
+                new PageTreeNode(){Name = "page1", PageType = "ArticlePage"},
+                new PageTreeNode(){Name = "page2", PageType = "ArticlePage"}
             }};
             repo.Insert(root);
             
