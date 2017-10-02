@@ -1,9 +1,10 @@
 ﻿@model CoreCms.SampleSite.Pages.ArticlePage
-
+@using CoreCms.Cms.Core.HtmlExtensions
+@using CoreCms.SampleSite.Pages
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
 
-<h1>Article</h1>
-<h2>@Model.Title</h2>
+<h1>Article</h1> 
+<h2>@Html.Render(Model, c => c.Title)</h2>
