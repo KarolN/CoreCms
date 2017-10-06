@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,12 +15,15 @@ namespace CoreCms.Cms.Core.RouterProvider
     public class CmsRouter : ICmsRouter
     {
         private readonly List<IContentReferenceLocator> _referenceLocators;
-        private readonly ICmsRoutingHandler _routingHandler;
+        private readonly Dictionary<Type,ICmsRoutingHandler> _routingHandlers;
+        private readonly List<ICmsModuleDescriptor> _moduleDescriptors;
 
-        public CmsRouter(List<IContentReferenceLocator> referenceLocators, ICmsRoutingHandler routingHandler)
+        public CmsRouter(List<IContentReferenceLocator> referenceLocators, List<ICmsRoutingHandler> routingHandlers,
+                List<ICmsModuleDescriptor> moduleDescriptors)
         {
             _referenceLocators = referenceLocators;
-            _routingHandler = routingHandler;
+            _moduleDescriptors = moduleDescriptors;
+            _routingHandlers = routingHandlers.ToDictionary(x => x.GetType(), x => x);
         }
         public async Task RouteAsync(RouteContext context)
         {
@@ -29,7 +33,12 @@ namespace CoreCms.Cms.Core.RouterProvider
                 return;
             }
             context.RouteData.Values.Add(CoreConstants.ContentReferenceRouteDataKey, contentReference);
-            var requestHandler = _routingHandler.GetRequestHandler(context.HttpContext, context.RouteData);
+            
+            var contentModuleDescriptor =
+                _moduleDescriptors.Single(x => x.GetModuleName() == contentReference.ContentType);
+            var routingHandler =
+                _routingHandlers[contentModuleDescriptor.GetRoutingHandlerType()];
+            var requestHandler = routingHandler.GetRequestHandler(context.HttpContext, context.RouteData);
             if (requestHandler != null)
             {
                 context.Handler = requestHandler;

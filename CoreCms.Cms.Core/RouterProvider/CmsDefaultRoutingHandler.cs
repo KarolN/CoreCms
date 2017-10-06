@@ -15,18 +15,15 @@ using Microsoft.AspNetCore.Routing;
 
 namespace CoreCms.Cms.Core.RouterProvider
 {
-    public class CmsRoutingHandler : ICmsRoutingHandler
+    public class CmsDefaultRoutingHandler : ICmsRoutingHandler
     {
-        private readonly List<ICmsModuleDescriptor> _moduleDescriptors;
         private readonly List<IControllerActionResolver> _actionResolvers;
         private readonly IActionInvokerFactory _actionInvoker;
         private readonly IActionDescriptorCollectionProvider _actionDescriptorCollectionProvider;
 
-        public CmsRoutingHandler( List<ICmsModuleDescriptor> moduleDescriptors,
-            List<IControllerActionResolver> actionResolvers, IActionInvokerFactory actionInvoker,
+        public CmsDefaultRoutingHandler(List<IControllerActionResolver> actionResolvers, IActionInvokerFactory actionInvoker,
             IActionDescriptorCollectionProvider actionDescriptorCollectionProvider)
         {
-            _moduleDescriptors = moduleDescriptors;
             _actionResolvers = actionResolvers;
             _actionInvoker = actionInvoker;
             _actionDescriptorCollectionProvider = actionDescriptorCollectionProvider;

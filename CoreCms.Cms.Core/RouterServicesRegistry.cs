@@ -8,8 +8,8 @@ namespace CoreCms.Cms.Core
     {
         public RouterServicesRegistry()
         {
-            For<ICmsRouter>().Use<CmsRouter>();
-            For<ICmsRoutingHandler>().Use<CmsRoutingHandler>();
+            For<ICmsRouter>().Singleton().Use<CmsRouter>();
+            For<ICmsRoutingHandler>().Use<CmsDefaultRoutingHandler>().Named("CmsDefaultRoutingHandler");
         }
     }
 }

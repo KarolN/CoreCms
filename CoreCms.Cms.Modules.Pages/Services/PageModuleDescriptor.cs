@@ -1,4 +1,6 @@
-﻿using CoreCms.Cms.Core.Contract;
+﻿using System;
+using CoreCms.Cms.Core.Contract;
+using CoreCms.Cms.Core.RouterProvider;
 
 namespace CoreCms.Cms.Modules.Pages.Services
 {
@@ -7,6 +9,11 @@ namespace CoreCms.Cms.Modules.Pages.Services
         public string GetModuleName()
         {
             return PageConstants.ContentType;
+        }
+
+        public Type GetRoutingHandlerType()
+        {
+            return typeof(CmsDefaultRoutingHandler);
         }
     }
 }
