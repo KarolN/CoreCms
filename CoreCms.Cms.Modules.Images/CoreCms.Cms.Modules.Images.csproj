@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Cms.Core\CoreCms.Cms.Core.csproj">
+      <Project>{A93851EA-18E2-4CB0-A04C-D95047330DD5}</Project>
+      <Name>CoreCms.Cms.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreCms.DataAccess.Contract\CoreCms.DataAccess.Contract.csproj">
+      <Project>{C76B2506-E67E-47F5-A6CE-BC03CADB46EE}</Project>
+      <Name>CoreCms.DataAccess.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreCms.DataAccess\CoreCms.DataAccess.csproj">
+      <Project>{0F9CDC06-0F30-4A77-A58D-E09EE9286027}</Project>
+      <Name>CoreCms.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="1.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap, Version=4.5.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\.nuget\packages\structuremap\4.5.0\lib\netstandard1.5\StructureMap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess" />
+  </ItemGroup>
+</Project>
