@@ -7,8 +7,10 @@ namespace CoreCms.DataAccess
     {
         public static IMongoDatabase GetDatabase(IConfigurationRoot configuration)
         {
-            var client = new MongoClient("mongodb://localhost:27017");
-            var db = client.GetDatabase("test");
+            var mongoConnectionString = configuration["CoreCms:Core:MongoConnectionString"];
+            var client = new MongoClient(mongoConnectionString);
+            var databaseName = configuration["CoreCms:Core:CmsDatabase"];
+            var db = client.GetDatabase(databaseName);
             return db;
         }
     }
