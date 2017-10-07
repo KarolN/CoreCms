@@ -24,7 +24,12 @@ namespace CoreCms.Cms.Core.Infrastructure
 
         public async Task<IHtmlContent> Render<T>(IHtmlHelper helper, T content, Func<T, object> renderProperty) where T : Content
         {
-            var propertyType = renderProperty(content).GetType();
+            var property = renderProperty(content);
+            if (property == null)
+            {
+                return new HtmlString("");
+            }
+            var propertyType = property.GetType();
             if (_renderersDictionary.ContainsKey(propertyType))
             {
                 var renderer = _renderersDictionary[propertyType];

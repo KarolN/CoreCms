@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Model.Content;
 using CoreCms.Cms.Modules.Pages.DataAccess;
@@ -17,25 +18,28 @@ namespace CoreCms.Cms.Modules.Pages.Services
         
         public ContentReference LocateFromUrl(string url)
         {
-            var contentRoot = _pageTreeRepository.GetQueryable().Single();
-            var splitedPath = url.Split('/').Where(x => !string.IsNullOrEmpty(x));
+            var nodes = _pageTreeRepository.GetQueryable().ToList();
+            var rootNode = nodes.Single(x => x.ParentId == Guid.Empty);
 
-            PageTreeNode currentNode = contentRoot;
-            foreach (var part in splitedPath)
+            var fragmentedUrl = url.Split('/').Where(x => !string.IsNullOrEmpty(x));
+
+            var currentNode = rootNode;
+            foreach (var fragment in fragmentedUrl)
             {
-                var matchChild = contentRoot.Children.SingleOrDefault(x => x.Name == part);
-                if (matchChild == null)
+                var children = nodes.Where(x => x.ParentId == currentNode.Id);
+                var match = children.SingleOrDefault(x => x.Name == fragment);
+
+                currentNode = match;
+                if (match == null)
                 {
-                    return null;
+                    break;
                 }
-                currentNode = matchChild;
             }
             if (currentNode == null)
             {
                 return null;
             }
-            var contentReference = new PageReference{Name = currentNode.Name, PageId = currentNode.PageId, PageType = currentNode.PageType};
-            return contentReference;
+            return new PageReference(){Name = currentNode.Name, PageId = currentNode.PageId, PageType = currentNode.PageType};
         }
     }
 }
