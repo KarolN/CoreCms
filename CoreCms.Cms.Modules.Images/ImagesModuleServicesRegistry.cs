@@ -19,6 +19,7 @@ namespace CoreCms.Cms.Modules.Images
             For<IContentReferenceLocator>().Use<ImageReferenceLocator>().Named(ImagesModuleConstants.ContentType);
             For<IImageLoader>().Use<FileSystemImageLoader>();
             For<IContentProvider>().Use<ImageContentProvider>().Named(ImagesModuleConstants.ContentType);
+            For<IContentUrlProvider>().Use<ImageUrlProvider>().Named(ImagesModuleConstants.ContentType);
         }   
     }
 }

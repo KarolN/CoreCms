@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Model.Content;
 using CoreCms.Cms.Modules.Images.Model;
 using CoreCms.DataAccess.Contract;
+using Microsoft.AspNetCore.Http;
 
 namespace CoreCms.Cms.Modules.Images.Services
 {
@@ -16,27 +18,22 @@ namespace CoreCms.Cms.Modules.Images.Services
         }
         public ContentReference LocateFromUrl(string url)
         {
-            var rootNode = _repository.GetQueryable().Single();
+            var nodes = _repository.GetQueryable().ToList();
+            var rootNode = nodes.Single(x => x.ParentId == Guid.Empty);
+
             var fragmentedUrl = url.Split('/').Where(x => !string.IsNullOrEmpty(x));
 
             var currentNode = rootNode;
             foreach (var fragment in fragmentedUrl)
             {
-                var treeNode = currentNode as ImagesDirectory;
-                if (treeNode == null)
+                var children = nodes.Where(x => x.ParentId == currentNode.Id);
+                var match = children.SingleOrDefault(x => x.Name == fragment);
+
+                currentNode = match;
+                if (match == null)
                 {
-                    currentNode = null;
                     break;
                 }
-
-                var matchChid = treeNode.Children.SingleOrDefault(x => x.Name == fragment);
-                if (matchChid == null)
-                {
-                    currentNode = null;
-                    break;
-                }
-
-                currentNode = matchChid;
             }
 
             var imageNode = currentNode as ImageNode;
@@ -45,11 +42,7 @@ namespace CoreCms.Cms.Modules.Images.Services
                 return null;
             }
             
-            var imageReference = new ImageReference
-            {
-                ImageId = imageNode.ImageId
-            };
-            return imageReference;
+            return new ImageReference{Name = imageNode.Name, ImageId = imageNode.ImageId};
         }
     }
 }

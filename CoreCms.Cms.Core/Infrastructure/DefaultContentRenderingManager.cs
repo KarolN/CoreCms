@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Model.Content;
 using Microsoft.AspNetCore.Html;
@@ -10,24 +11,32 @@ namespace CoreCms.Cms.Core.Infrastructure
 {
     public class DefaultContentRenderingManager : IRenderingManager
     {
-        private readonly Dictionary<Type, IContentRenderer> renderersDictionary;
+        private readonly Dictionary<Type, IContentRenderer> _renderersDictionary;
         
         public DefaultContentRenderingManager(List<IContentRenderer> contentRenderers)
         {
-            renderersDictionary = new Dictionary<Type, IContentRenderer>();
+            _renderersDictionary = new Dictionary<Type, IContentRenderer>();
             foreach (var contentRenderer in contentRenderers)
             {
-                renderersDictionary.Add(contentRenderer.SupportedType, contentRenderer);
+                _renderersDictionary.Add(contentRenderer.SupportedType, contentRenderer);
             }
         }
 
-        public IHtmlContent Render<T>(IHtmlHelper helper, T content, Func<T, object> renderProperty) where T : Content
+        public async Task<IHtmlContent> Render<T>(IHtmlHelper helper, T content, Func<T, object> renderProperty) where T : Content
         {
             var propertyType = renderProperty(content).GetType();
-            if (renderersDictionary.ContainsKey(propertyType))
+            if (_renderersDictionary.ContainsKey(propertyType))
             {
-                var renderer = renderersDictionary[propertyType];
-                return renderer.Render(content, renderProperty);
+                var renderer = _renderersDictionary[propertyType];
+                return await renderer.Render(content, renderProperty, helper);
+            }
+
+            foreach (var contentRenderer in _renderersDictionary)
+            {
+                if (contentRenderer.Value.CanRender(content, renderProperty))
+                {
+                    return await contentRenderer.Value.Render(content, renderProperty, helper);
+                }
             }
             
             throw new ArgumentException("Cannot find renderer for property of type: " + propertyType.Name);

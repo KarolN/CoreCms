@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using CoreCms.Cms.Model.Content;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,6 @@ namespace CoreCms.Cms.Core.Contract
 {
     public interface IRenderingManager
     {
-        IHtmlContent Render<T>(IHtmlHelper helper, T content, Func<T, object> renderProperty) where T : Content;
+        Task<IHtmlContent> Render<T>(IHtmlHelper helper, T content, Func<T, object> renderProperty) where T : Content;
     }
 }

@@ -2,8 +2,10 @@
 
 namespace CoreCms.Cms.Model.Content
 {
-    public class Content : BaseEntity
+    public abstract class Content : BaseEntity
     {
         public string Name { get; set; }
+
+        public abstract ContentReference GetReference();
     }
 }

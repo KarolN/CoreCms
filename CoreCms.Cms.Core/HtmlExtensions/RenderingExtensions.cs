@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Model.Content;
 using Microsoft.AspNetCore.Html;
@@ -10,11 +11,11 @@ namespace CoreCms.Cms.Core.HtmlExtensions
 {
     public static class RenderingExtensions
     {
-        public static IHtmlContent Render<T>(this IHtmlHelper htmlHelper, T content,Func<T, object> renderProperty) where T : Content
+        public static async Task<IHtmlContent> Render<T>(this IHtmlHelper htmlHelper, T content,Func<T, object> renderProperty) where T : Content
         {
             var renderingManager = htmlHelper.ViewContext.HttpContext.RequestServices.GetService<IRenderingManager>();
 
-            return renderingManager.Render(htmlHelper, content, renderProperty);
+            return await renderingManager.Render(htmlHelper, content, renderProperty);
         }
     }
 }

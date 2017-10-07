@@ -7,4 +7,5 @@
 }
 
 <h1>Article</h1> 
-<h2>@Html.Render(Model, c => c.Title)</h2>
+<h2>@await Html.Render(Model, c => c.Title)</h2>
+@await Html.Render(Model, c => c.Image1)

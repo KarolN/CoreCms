@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Reflection;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Infrastructure;
+using CoreCms.Cms.Modules.Images;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
