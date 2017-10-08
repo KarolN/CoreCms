@@ -1,7 +1,7 @@
-﻿using CoreCms.Cms.Core.Infrastructure;
-using CoreCms.Cms.Model.Content;
+﻿using CoreCms.Cms.Core.Contract.Model.Content;
+using CoreCms.Cms.Core.Contract.Model.Infractructure;
 
-namespace CoreCms.Cms.Core.Contract
+namespace CoreCms.Cms.Core.Contract.Services
 {
     public interface IControllerActionResolver : ICmsModuleService
     {

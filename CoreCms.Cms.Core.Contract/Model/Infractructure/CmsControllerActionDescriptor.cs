@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CoreCms.Cms.Core.Infrastructure
+namespace CoreCms.Cms.Core.Contract.Model.Infractructure
 {
     public class CmsControllerActionDescriptor
     {

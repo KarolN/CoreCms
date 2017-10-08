@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CoreCms.Cms.Model.Content
+﻿namespace CoreCms.Cms.Core.Contract.Model.Content
 {
     public abstract class ContentReference
     {

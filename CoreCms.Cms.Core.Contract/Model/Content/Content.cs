@@ -1,6 +1,6 @@
 ﻿using CoreCms.Cms.Model.Base;
 
-namespace CoreCms.Cms.Model.Content
+namespace CoreCms.Cms.Core.Contract.Model.Content
 {
     public abstract class Content : BaseEntity
     {

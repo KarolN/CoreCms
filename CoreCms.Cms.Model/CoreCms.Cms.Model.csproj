@@ -11,4 +11,7 @@
       <Name>CoreCms.Common.Constants</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content" />
+  </ItemGroup>
 </Project>

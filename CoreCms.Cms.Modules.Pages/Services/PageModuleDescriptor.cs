@@ -1,5 +1,6 @@
 ﻿using System;
 using CoreCms.Cms.Core.Contract;
+using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Core.RouterProvider;
 
 namespace CoreCms.Cms.Modules.Pages.Services

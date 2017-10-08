@@ -1,4 +1,5 @@
 ﻿using CoreCms.Cms.Core.Contract;
+using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Core.DefaultContentRenderers;
 using CoreCms.Cms.Core.Infrastructure;
 using Microsoft.AspNetCore.Mvc;

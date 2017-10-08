@@ -1,4 +1,4 @@
-﻿using CoreCms.Cms.Model.Content;
+﻿using CoreCms.Cms.Core.Contract.Model.Content;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreCms.Cms.Core.Contract

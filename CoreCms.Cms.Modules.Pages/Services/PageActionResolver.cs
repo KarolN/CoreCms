@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using CoreCms.Cms.Core.Contract;
+using CoreCms.Cms.Core.Contract.Model.Content;
+using CoreCms.Cms.Core.Contract.Model.Infractructure;
+using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Core.Infrastructure;
-using CoreCms.Cms.Model.Content;
 using CoreCms.Cms.Modules.Pages.Model;
 
 namespace CoreCms.Cms.Modules.Pages.Services

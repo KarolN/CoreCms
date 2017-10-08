@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
 using CoreCms.Cms.Core.Contract;
-using CoreCms.Cms.Model.Content;
+using CoreCms.Cms.Core.Contract.Model.Content;
+using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Modules.Images.Model;
 using CoreCms.DataAccess.Contract;
 using Microsoft.AspNetCore.Http;

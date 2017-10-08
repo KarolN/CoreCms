@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using CoreCms.Cms.Core.Infrastructure;
+using CoreCms.Cms.Core.Contract.Model.Infractructure;
 
-namespace CoreCms.Cms.Core.Contract
+namespace CoreCms.Cms.Core.Contract.Services
 {
     public interface ICmsViewComponentsDescriptorsProvider
     {

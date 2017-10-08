@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CoreCms.Cms.Core.Contract;
-using CoreCms.Cms.Model.Content;
+using CoreCms.Cms.Core.Contract.Model.Content;
+using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Modules.Images.Model;
 using CoreCms.DataAccess.Contract;
 

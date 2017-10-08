@@ -1,6 +1,7 @@
 ﻿using CoreCms.Cms.Core.Contract;
+using CoreCms.Cms.Core.Contract.Model.Content;
+using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Core.Infrastructure;
-using CoreCms.Cms.Model.Content;
 using CoreCms.Cms.Modules.Images.Model;
 using CoreCms.Cms.Modules.Images.Services;
 using Microsoft.AspNetCore.Http;

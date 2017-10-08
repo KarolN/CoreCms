@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CoreCms.Cms.Core.Contract;
-using CoreCms.Cms.Model.Content;
+using CoreCms.Cms.Core.Contract.Model.Content;
+using CoreCms.Cms.Core.Contract.Services;
 
 namespace CoreCms.Cms.Core.Infrastructure
 {

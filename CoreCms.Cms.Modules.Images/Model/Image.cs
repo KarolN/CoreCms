@@ -1,4 +1,4 @@
-﻿using CoreCms.Cms.Model.Content;
+﻿using CoreCms.Cms.Core.Contract.Model.Content;
 
 namespace CoreCms.Cms.Modules.Images.Model
 {

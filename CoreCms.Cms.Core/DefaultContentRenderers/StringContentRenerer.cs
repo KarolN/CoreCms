@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CoreCms.Cms.Model.Content;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 

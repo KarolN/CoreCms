@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CoreCms.Cms.Core.Contract;
-using CoreCms.Cms.Model.Content;
+using CoreCms.Cms.Core.Contract.Model.Content;
+using CoreCms.Cms.Core.Contract.Services;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;

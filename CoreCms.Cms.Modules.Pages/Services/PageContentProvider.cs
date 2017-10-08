@@ -3,7 +3,8 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using CoreCms.Cms.Core.Contract;
-using CoreCms.Cms.Model.Content;
+using CoreCms.Cms.Core.Contract.Model.Content;
+using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Modules.Pages.DataAccess;
 using CoreCms.Cms.Modules.Pages.Model;
 

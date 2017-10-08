@@ -1,4 +1,4 @@
-﻿namespace CoreCms.Cms.Core.Contract
+﻿namespace CoreCms.Cms.Core.Contract.Services
 {
     public interface ICmsModuleService
     {
