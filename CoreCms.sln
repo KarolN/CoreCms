@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCms.Cms.Model", "CoreCm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCms.Common.Utils", "CoreCms.Common.Utils\CoreCms.Common.Utils.csproj", "{1E41F2F1-F21B-45B7-9F32-EC61375BDD47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCms.Common.Constants", "CoreCms.Common.Constants\CoreCms.Common.Constants.csproj", "{F4135D47-0EAF-4C63-99FF-44628684B31E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCms.Cms.Modules.Pages", "CoreCms.Cms.Modules.Pages\CoreCms.Cms.Modules.Pages.csproj", "{BE424FF4-60AB-4E9A-A074-C662DBF749D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCms.Cms.Core", "CoreCms.Cms.Core\CoreCms.Cms.Core.csproj", "{A93851EA-18E2-4CB0-A04C-D95047330DD5}"
@@ -24,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCms.Cms.Modules.Images", "CoreCms.Cms.Modules.Images\CoreCms.Cms.Modules.Images.csproj", "{41C28EAD-F3D5-4293-A3FA-A38EB4F3E52D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCms.Cms.Core.Contract", "CoreCms.Cms.Core.Contract\CoreCms.Cms.Core.Contract.csproj", "{E472C2B4-04B6-4CAE-A500-02BB27CF720D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCms.Cms.Editor", "CoreCms.Cms.Editor\CoreCms.Cms.Editor.csproj", "{AF02AC6C-3F9A-464D-A6B8-15D2AAE6BB8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +51,6 @@ Global
 		{1E41F2F1-F21B-45B7-9F32-EC61375BDD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E41F2F1-F21B-45B7-9F32-EC61375BDD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E41F2F1-F21B-45B7-9F32-EC61375BDD47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4135D47-0EAF-4C63-99FF-44628684B31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4135D47-0EAF-4C63-99FF-44628684B31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4135D47-0EAF-4C63-99FF-44628684B31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4135D47-0EAF-4C63-99FF-44628684B31E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE424FF4-60AB-4E9A-A074-C662DBF749D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE424FF4-60AB-4E9A-A074-C662DBF749D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE424FF4-60AB-4E9A-A074-C662DBF749D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +71,10 @@ Global
 		{E472C2B4-04B6-4CAE-A500-02BB27CF720D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E472C2B4-04B6-4CAE-A500-02BB27CF720D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E472C2B4-04B6-4CAE-A500-02BB27CF720D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF02AC6C-3F9A-464D-A6B8-15D2AAE6BB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF02AC6C-3F9A-464D-A6B8-15D2AAE6BB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF02AC6C-3F9A-464D-A6B8-15D2AAE6BB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF02AC6C-3F9A-464D-A6B8-15D2AAE6BB8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

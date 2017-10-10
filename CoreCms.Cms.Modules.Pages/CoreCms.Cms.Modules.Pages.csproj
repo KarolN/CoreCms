@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoreCms.Cms.Core\CoreCms.Cms.Core.csproj">
@@ -13,5 +13,8 @@
     </ProjectReference>
     <ProjectReference Include="..\CoreCms.DataAccess.Contract\CoreCms.DataAccess.Contract.csproj" />
     <ProjectReference Include="..\CoreCms.DataAccess\CoreCms.DataAccess.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NETStandard.Library" Version="2.0.1" />
   </ItemGroup>
 </Project>

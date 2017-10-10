@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoreCms.Cms.Core\CoreCms.Cms.Core.csproj">
@@ -17,10 +17,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.0.0" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=1.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=11.1.2.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
       <HintPath>..\..\..\.nuget\packages\microsoft.aspnetcore.mvc.viewfeatures\1.1.3\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap, Version=4.5.0.0, Culture=neutral, PublicKeyToken=null">

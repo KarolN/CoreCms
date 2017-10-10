@@ -1,15 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MongoDB.Bson" Version="2.4.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CoreCms.Common.Constants\CoreCms.Common.Constants.csproj">
-      <Project>{F4135D47-0EAF-4C63-99FF-44628684B31E}</Project>
-      <Name>CoreCms.Common.Constants</Name>
-    </ProjectReference>
+    <PackageReference Include="NETStandard.Library" Version="2.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content" />
