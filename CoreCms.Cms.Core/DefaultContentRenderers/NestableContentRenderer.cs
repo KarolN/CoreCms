@@ -25,9 +25,9 @@ namespace CoreCms.Cms.Core.DefaultContentRenderers
             _viewComponentHelper = viewComponentHelper;
         }
 
-        public override async Task<IHtmlContent> Render<T>(T content, Func<T, object> renderProperty, IHtmlHelper htmlHelper)
+        public override async Task<IHtmlContent> Render(object renderProperty, ViewContext viewContext)
         {
-            var contentReference = renderProperty(content) as ContentReference;
+            var contentReference = renderProperty as ContentReference;
             if (contentReference == null)
             {
                 throw new ArgumentException(
@@ -41,7 +41,7 @@ namespace CoreCms.Cms.Core.DefaultContentRenderers
                 viewComponentsDescriptors.Single(x => x.ModelType == loadedContent.GetType());
 
             var defaultViewComponentHelper = _viewComponentHelper as DefaultViewComponentHelper;
-            defaultViewComponentHelper?.Contextualize(htmlHelper.ViewContext);
+            defaultViewComponentHelper?.Contextualize(viewContext);
 
             return await _viewComponentHelper.InvokeAsync(contentViewComponentDescriptor.ViewComponentName, new {contentModel = loadedContent});
         }

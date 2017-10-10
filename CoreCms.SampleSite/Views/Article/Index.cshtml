@@ -7,5 +7,6 @@
 }
 
 <h1>Article</h1> 
-<h2>@await Html.Render(Model, c => c.Title)</h2>
-@await Html.Render(Model, c => c.Image1)
+<cms-content content="@Model.Title"></cms-content>
+<a cms-content-href="@Model.Other">Other page</a>
+<cms-content content="@Model.Image1"></cms-content>

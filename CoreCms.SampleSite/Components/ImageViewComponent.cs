@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using CoreCms.Cms.Core.Abstract;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Modules.Images.Model;

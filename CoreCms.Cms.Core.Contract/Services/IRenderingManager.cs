@@ -8,6 +8,6 @@ namespace CoreCms.Cms.Core.Contract.Services
 {
     public interface IRenderingManager
     {
-        Task<IHtmlContent> Render<T>(IHtmlHelper helper, T content, Func<T, object> renderProperty) where T : Content;
+        Task<IHtmlContent> Render(ViewContext helper, object renderProperty);
     }
 }

@@ -1,4 +1,5 @@
-﻿using CoreCms.Cms.Core.Contract;
+﻿using CoreCms.Cms.Core.Abstract;
+using CoreCms.Cms.Core.Contract;
 using CoreCms.SampleSite.Pages;
 using Microsoft.AspNetCore.Mvc;
 

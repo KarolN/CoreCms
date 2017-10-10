@@ -23,9 +23,9 @@ namespace CoreCms.Cms.Core.Infrastructure
             }
         }
 
-        public async Task<IHtmlContent> Render<T>(IHtmlHelper helper, T content, Func<T, object> renderProperty) where T : Content
+        public async Task<IHtmlContent> Render(ViewContext viewContext, object renderProperty)
         {
-            var property = renderProperty(content);
+            var property = renderProperty;
             if (property == null)
             {
                 return new HtmlString("");
@@ -34,14 +34,14 @@ namespace CoreCms.Cms.Core.Infrastructure
             if (_renderersDictionary.ContainsKey(propertyType))
             {
                 var renderer = _renderersDictionary[propertyType];
-                return await renderer.Render(content, renderProperty, helper);
+                return await renderer.Render(renderProperty, viewContext);
             }
 
             foreach (var contentRenderer in _renderersDictionary)
             {
-                if (contentRenderer.Value.CanRender(content, renderProperty))
+                if (contentRenderer.Value.CanRender(renderProperty))
                 {
-                    return await contentRenderer.Value.Render(content, renderProperty, helper);
+                    return await contentRenderer.Value.Render(renderProperty, viewContext);
                 }
             }
             

@@ -11,13 +11,12 @@ namespace CoreCms.Cms.Core.DefaultContentRenderers
 {
     public abstract class BaseContentRenderer : IContentRenderer
     {
-        public bool CanRender<T>(T content,Func<T, object> renderProperty) where T : Content
+        public bool CanRender(object renderProperty)
         {
-            var property = renderProperty(content);
-            return SupportedType.IsAssignableFrom(property?.GetType());
+            return SupportedType.IsAssignableFrom(renderProperty?.GetType());
         }
 
-        public abstract Task<IHtmlContent> Render<T>(T content, Func<T, object> renderProperty, IHtmlHelper htmlHelper) where T : Content;
+        public abstract Task<IHtmlContent> Render(object renderProperty, ViewContext viewContext);
 
         public abstract Type SupportedType { get; }
     }

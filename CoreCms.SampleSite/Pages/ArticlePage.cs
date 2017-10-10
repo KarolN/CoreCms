@@ -7,5 +7,6 @@ namespace CoreCms.SampleSite.Pages
     {
         public string Title { get; set; }
         public ImageReference Image1 { get; set; }
+        public PageReference Other { get; set; }
     }
 }

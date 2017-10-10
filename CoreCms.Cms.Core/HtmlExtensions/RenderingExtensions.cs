@@ -15,8 +15,8 @@ namespace CoreCms.Cms.Core.HtmlExtensions
         public static async Task<IHtmlContent> Render<T>(this IHtmlHelper htmlHelper, T content,Func<T, object> renderProperty) where T : Content
         {
             var renderingManager = htmlHelper.ViewContext.HttpContext.RequestServices.GetService<IRenderingManager>();
-
-            return await renderingManager.Render(htmlHelper, content, renderProperty);
+            var property = renderProperty(content);
+            return await renderingManager.Render(htmlHelper.ViewContext, property);
         }
     }
 }

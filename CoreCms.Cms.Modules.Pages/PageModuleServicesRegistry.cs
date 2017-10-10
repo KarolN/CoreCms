@@ -1,4 +1,5 @@
-﻿using CoreCms.Cms.Core.Contract;
+﻿using System;
+using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Modules.Pages.DataAccess;
 using CoreCms.Cms.Modules.Pages.Services;
@@ -16,6 +17,7 @@ namespace CoreCms.Cms.Modules.Pages
             For<IControllerActionResolver>().Use<PageActionResolver>().Named(PageConstants.ContentType);
             For<IPageRepository>().Use<PageRepository>();
             For<IContentProvider>().Use<PageContentProvider>().Named(PageConstants.ContentType);
+            For<IContentUrlProvider>().Use<PageUrlProvider>().Named(PageConstants.ContentType);
         }
     }
 } 

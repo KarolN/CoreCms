@@ -8,8 +8,8 @@ namespace CoreCms.Cms.Core.Contract.Services
 {
     public interface IContentRenderer
     {
-        bool CanRender<T>(T content,Func<T, object> renderProperty) where T : Content;
-        Task<IHtmlContent> Render<T>(T content, Func<T, object> renderProperty, IHtmlHelper htmlHelper) where T : Content;
+        bool CanRender(object renderProperty);
+        Task<IHtmlContent> Render(object renderProperty, ViewContext viewContext);
         Type SupportedType { get; }
     }
 }
