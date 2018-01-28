@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CoreCms Edit panel</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+<main id="app">
+    <md-toolbar>
+        <h1 class="md-title">CoreCMS editor panel</h1>
+    </md-toolbar>
+
+    <md-layout>
+        <md-layout md-column md-flex="20">
+            <content-browser></content-browser>
+        </md-layout>
+        <md-layout md-column md-flex="80">
+            <content-editor></content-editor>
+        </md-layout>
+    </md-layout>
+</main>
+<script src="assets/common.bundle.js"></script>
+<script src="assets/app.bundle.js"></script>
+<script src="assets/styles.bundle.js"></script>
+</body>
+</html>

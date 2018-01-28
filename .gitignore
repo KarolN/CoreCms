@@ -68,3 +68,8 @@ ipch/
 *.psess
 *.vsp
 *.vspx
+
+#node
+node_modules/
+assets/
+
