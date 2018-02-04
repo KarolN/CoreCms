@@ -12,6 +12,7 @@
     <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Cms.Editor.WebApi\CoreCms.Cms.Editor.WebApi.csproj" />
     <ProjectReference Include="..\CoreCms.Cms.Modules.Images\CoreCms.Cms.Modules.Images.csproj" />
     <ProjectReference Include="..\CoreCms.Cms.Modules.Pages\CoreCms.Cms.Modules.Pages.csproj" />
     <ProjectReference Include="..\CoreCms.DataAccess\CoreCms.DataAccess.csproj" />

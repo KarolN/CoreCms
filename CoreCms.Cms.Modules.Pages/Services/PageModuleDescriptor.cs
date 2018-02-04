@@ -12,6 +12,11 @@ namespace CoreCms.Cms.Modules.Pages.Services
             return PageConstants.ContentType;
         }
 
+        public string GetModuleDisplayName()
+        {
+            return "Pages";
+        }
+
         public Type GetRoutingHandlerType()
         {
             return typeof(CmsDefaultRoutingHandler);

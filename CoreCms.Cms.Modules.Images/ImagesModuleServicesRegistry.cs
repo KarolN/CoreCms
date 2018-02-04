@@ -1,5 +1,6 @@
 ﻿using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Contract.Services;
+using CoreCms.Cms.Editor.Bussines.Contract.Services.ModuleSpecific;
 using CoreCms.Cms.Modules.Images.Model;
 using CoreCms.Cms.Modules.Images.RoutingProvider;
 using CoreCms.Cms.Modules.Images.Services;
@@ -21,6 +22,7 @@ namespace CoreCms.Cms.Modules.Images
             For<IImageLoader>().Use<FileSystemImageLoader>();
             For<IContentProvider>().Use<ImageContentProvider>().Named(ImagesModuleConstants.ContentType);
             For<IContentUrlProvider>().Use<ImageUrlProvider>().Named(ImagesModuleConstants.ContentType);
+            For<IContentTreeProvider>().Use<ImageTreeProvider>().Named(ImagesModuleConstants.ContentType);
         }   
     }
 }

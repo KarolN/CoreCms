@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Cms.Core.Contract\CoreCms.Cms.Core.Contract.csproj">
+      <Project>{E472C2B4-04B6-4CAE-A500-02BB27CF720D}</Project>
+      <Name>CoreCms.Cms.Core.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreCms.Cms.Editor.Bussines.Contract\CoreCms.Cms.Editor.Bussines.Contract.csproj">
+      <Project>{0203343C-3812-49EE-BC5A-9744625993B0}</Project>
+      <Name>CoreCms.Cms.Editor.Bussines.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreCms.DataAccess.Contract\CoreCms.DataAccess.Contract.csproj">
+      <Project>{C76B2506-E67E-47F5-A6CE-BC03CADB46EE}</Project>
+      <Name>CoreCms.DataAccess.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap, Version=4.5.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\.nuget\packages\structuremap\4.5.0\lib\netstandard1.5\StructureMap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

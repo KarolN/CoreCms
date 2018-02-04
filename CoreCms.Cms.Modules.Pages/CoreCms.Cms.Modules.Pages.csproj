@@ -7,6 +7,14 @@
       <Project>{A93851EA-18E2-4CB0-A04C-D95047330DD5}</Project>
       <Name>CoreCms.Cms.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CoreCms.Cms.Editor.Bussines.Contract\CoreCms.Cms.Editor.Bussines.Contract.csproj">
+      <Project>{0203343C-3812-49EE-BC5A-9744625993B0}</Project>
+      <Name>CoreCms.Cms.Editor.Bussines.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreCms.Cms.Editor.Bussines\CoreCms.Cms.Editor.Bussines.csproj">
+      <Project>{85B44F8D-363A-473A-B428-8BF403F3BD42}</Project>
+      <Name>CoreCms.Cms.Editor.Bussines</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CoreCms.Cms.Model\CoreCms.Cms.Model.csproj">
       <Project>{93E15CCD-F3D8-4C37-99A0-2A738E2988C9}</Project>
       <Name>CoreCms.Cms.Model</Name>

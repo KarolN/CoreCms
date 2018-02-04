@@ -36,11 +36,8 @@ namespace CoreCms.Cms.Modules.Pages.Services
                     break;
                 }
             }
-            if (currentNode == null)
-            {
-                return null;
-            }
-            return new PageReference(){Name = currentNode.Name, PageId = currentNode.PageId, PageType = currentNode.PageType};
+
+            return currentNode?.ToContentReference();
         }
     }
 }

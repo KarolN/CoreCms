@@ -12,6 +12,11 @@ namespace CoreCms.Cms.Modules.Images
             return ImagesModuleConstants.ContentType;
         }
 
+        public string GetModuleDisplayName()
+        {
+            return "Images";
+        }
+
         public Type GetRoutingHandlerType()
         {
             return typeof(CmsImageRoutingHandler);

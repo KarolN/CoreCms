@@ -2,19 +2,21 @@ import contentTreeDataService from "~/services/contentTreeDataService"
 
 export const actions = {
     loadContentTypes : function(context){
-        const types = contentTreeDataService.getContentTypes();
-        context.commit('initContentTypes', types)
+        contentTreeDataService.getContentTypes().then(function(response) {
+            context.commit('initContentTypes', response.data);
+        });
     },
 
     loadContentTree : function(context, contentType){
-        const tree = contentTreeDataService.getContentTree(contentType);
-        context.commit('loadContentTree', {contentType, tree});
+        contentTreeDataService.getContentTree(contentType).then(function(response) {
+            context.commit('loadContentTree', {contentType, tree: response.data});
+        });
     },
 
     selectContentNode(context, contentNode){
         context.commit('selectContentNode', contentNode);
 
-        var editable = {name: contentNode.name};
+        let editable = {name: contentNode.name};
         context.commit('loadEditableContent', editable)
     }
-}
+};

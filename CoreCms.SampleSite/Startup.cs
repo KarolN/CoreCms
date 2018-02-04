@@ -3,6 +3,7 @@ using System.Reflection;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Core.Infrastructure;
+using CoreCms.Cms.Editor.WebApi.Controllers;
 using CoreCms.Cms.Modules.Images;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,10 +32,16 @@ namespace CoreCms.SampleSite
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            }));
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(ContentModelBindFilter));
-            });
+            }).AddApplicationPart(typeof(ContentTypesController).GetTypeInfo().Assembly);
 
             var container = new Container();
             container.Configure(cfg =>
@@ -54,7 +61,7 @@ namespace CoreCms.SampleSite
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-        {
+        {;
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
@@ -68,6 +75,7 @@ namespace CoreCms.SampleSite
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseCors("CorsPolicy");
             app.UseStaticFiles();
 
             var router = app.ApplicationServices.GetService<ICmsRouter>();
@@ -75,6 +83,7 @@ namespace CoreCms.SampleSite
             app.UseMvc(routes =>
             {
                 routes.Routes.Add(router);
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

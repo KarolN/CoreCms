@@ -13,10 +13,10 @@ export default new Vuex.Store({
     getters: {
         getContentTree: (state) => (contentType) => {
             let contentTree = state.contentTrees.filter(tree => tree.contentType === contentType);
-            if(contentTree){
+            if(contentTree[0]){
                 return contentTree[0].tree;
             }
-            return {children:[]}
+            return {root: {children:[]}}
         }
     }
 });

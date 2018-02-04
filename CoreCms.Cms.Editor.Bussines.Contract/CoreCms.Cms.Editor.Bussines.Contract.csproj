@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Cms.Core.Contract\CoreCms.Cms.Core.Contract.csproj">
+      <Project>{E472C2B4-04B6-4CAE-A500-02BB27CF720D}</Project>
+      <Name>CoreCms.Cms.Core.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
