@@ -2,36 +2,35 @@
     <li class="content-tree-list__item">
         <div>
             <div class="content-tree-list__item-content">
-                <md-layout md-align="end" md-gutter="10">
-                    <md-layout class="content-tree-list__expand-icon" md-flex="10">
+                <v-layout row :class="{'content-tree-list__item-content--selected': isSelected}">
+                    <v-flex class="content-tree-list__expand-icon" xs1>
                         <div class="content-tree-list__expand-icon-inner"
                              v-if="element.children && element.children.length > 0" v-on:click.stop="toggleExpand()">
-                            <md-icon v-show="!isExpanded">keyboard_arrow_right</md-icon>
-                            <md-icon v-show="isExpanded">keyboard_arrow_down</md-icon>
+                            <v-icon v-show="!isExpanded">keyboard_arrow_right</v-icon>
+                            <v-icon v-show="isExpanded">keyboard_arrow_down</v-icon>
                         </div>
-                    </md-layout>
-                    <md-layout md-flex="80" class="content-tree-list__item-name"
-                               :class="{'content-tree-list__item-content--selected': isSelected}">
+                    </v-flex>
+                    <v-flex xs9 class="content-tree-list__item-name">
                         <div v-on:click="select()">
                         {{element.name}}
                         </div>
-                    </md-layout>
-                    <md-layout md-flex="10">
-                        <md-menu>
-                            <md-button class="md-icon-button" md-menu-trigger>
-                                <md-icon>menu</md-icon>
-                            </md-button>
-                            <md-menu-content>
-                                <md-menu-item>
-                                    <span>Add child</span>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <span>Remove</span>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-                    </md-layout>
-                </md-layout>
+                    </v-flex>
+                    <v-flex xs1>
+                        <v-menu>
+                            <v-btn icon slot="activator">
+                                <v-icon>menu</v-icon>
+                            </v-btn>
+                            <v-list>
+                                <v-list-tile>
+                                    <v-list-tile-title>Add child</v-list-tile-title>
+                                </v-list-tile>
+                                <v-list-tile>
+                                    <v-list-tile-title>Remove</v-list-tile-title>
+                                </v-list-tile>
+                            </v-list>
+                        </v-menu>
+                    </v-flex>
+                </v-layout>
             </div>
             <ul class="content-tree-list__list" v-if="isExpanded">
                 <content-tree-item v-for="child in element.children" :element="child"
@@ -85,7 +84,7 @@
         }
 
         &__item-content {
-            padding: 15px 10px;
+            padding: 5px 5px;
 
             &--selected {
                 background-color: #cbcbcb;

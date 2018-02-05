@@ -8,18 +8,22 @@
 </head>
 <body>
 <main id="app">
-    <md-toolbar>
-        <h1 class="md-title">CoreCMS editor panel</h1>
-    </md-toolbar>
+    <v-app light>
+        <v-toolbar color="primary">
+            <v-toolbar-title class="white--text">CoreCMS editor panel</v-toolbar-title>
+        </v-toolbar>
 
-    <md-layout>
-        <md-layout md-column md-flex="20">
-            <content-browser></content-browser>
-        </md-layout>
-        <md-layout md-column md-flex="80">
-            <content-editor></content-editor>
-        </md-layout>
-    </md-layout>
+        <v-container fluid>
+            <v-layout>
+                <v-flex xs3>
+                    <content-browser></content-browser>
+                </v-flex>
+                <v-flex xs9>
+                   <content-editor></content-editor>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </v-app>
 </main>
 <script src="assets/common.bundle.js"></script>
 <script src="assets/app.bundle.js"></script>

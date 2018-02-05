@@ -1,1 +1,1 @@
-import 'vue-material/dist/vue-material.css'
+import 'vuetify/dist/vuetify.min.css'

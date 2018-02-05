@@ -1,8 +1,10 @@
 <template>
     <div>
+        <v-container flex>
         <ul class="content-tree__root-list">
             <content-tree-item :element="root"></content-tree-item>
         </ul>
+        </v-container>
     </div>
 </template>
 

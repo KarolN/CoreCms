@@ -1,13 +1,13 @@
 <template>
     <article class="editor__outer">
-    <md-card>
-        <md-card-header>
-            <div class="md-title">{{editableContent.name}}</div>
-        </md-card-header>
-        <md-card-content>
+    <v-card>
+        <v-card-title primary-title>
+            <h1>{{editableContent.name}}</h1>
+        </v-card-title>
+        <v-card-text>
 
-        </md-card-content>
-    </md-card>
+        </v-card-text>
+    </v-card>
     </article>
 </template>
 
