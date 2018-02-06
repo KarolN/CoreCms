@@ -15,7 +15,7 @@ namespace CoreCms.Cms.Modules.Pages.Model
 
         public ContentReference ToContentReference()
         {
-            return new PageReference{Name = Name, PageId = PageId, PageType = PageType };
+            return new PageReference{Name = Name, ContentId = PageId, PageType = PageType };
         }
     }
 }

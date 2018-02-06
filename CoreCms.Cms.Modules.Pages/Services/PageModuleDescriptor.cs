@@ -2,6 +2,7 @@
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Core.RouterProvider;
+using CoreCms.Cms.Modules.Pages.Model;
 
 namespace CoreCms.Cms.Modules.Pages.Services
 {
@@ -20,6 +21,11 @@ namespace CoreCms.Cms.Modules.Pages.Services
         public Type GetRoutingHandlerType()
         {
             return typeof(CmsDefaultRoutingHandler);
+        }
+
+        public Type GetContentReferenceType()
+        {
+            return typeof(PageReference);
         }
     }
 }

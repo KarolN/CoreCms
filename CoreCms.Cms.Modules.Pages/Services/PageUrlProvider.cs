@@ -22,7 +22,7 @@ namespace CoreCms.Cms.Modules.Pages.Services
             var pageReference = (PageReference) contentReference;
 
             var pageNodes = _pageTreeRepository.GetQueryable().ToList();
-            var referencedNode = pageNodes.Single(x => x.PageId == pageReference.PageId);
+            var referencedNode = pageNodes.Single(x => x.PageId == pageReference.ContentId);
 
             var currentNode = referencedNode;
             var hierarchy = new List<PageTreeNode>();

@@ -25,5 +25,9 @@
       <Name>CoreCms.Cms.Editor.Bussines.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\CoreCms.Cms.Editor.Bussines\CoreCms.Cms.Editor.Bussines.csproj" />
+    <ProjectReference Include="..\CoreCms.Common.Utils\CoreCms.Common.Utils.csproj">
+      <Project>{1E41F2F1-F21B-45B7-9F32-EC61375BDD47}</Project>
+      <Name>CoreCms.Common.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

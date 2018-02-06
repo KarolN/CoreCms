@@ -7,5 +7,6 @@ namespace CoreCms.Cms.Core.Contract.Services
         string GetModuleName();
         string GetModuleDisplayName();
         Type GetRoutingHandlerType();
+        Type GetContentReferenceType();
     }
 }

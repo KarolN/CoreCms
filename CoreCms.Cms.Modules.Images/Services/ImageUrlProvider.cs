@@ -24,7 +24,7 @@ namespace CoreCms.Cms.Modules.Images.Services
             var imageReference = contentReference as ImageReference;
             var nodes = _repository.GetQueryable().ToList();
             var imageNode = nodes.OfType<ImageNode>()
-                .Single(x => x.ImageId == imageReference.ImageId);
+                .Single(x => x.ImageId == imageReference.ContentId);
             var hierarchyList = new List<ImagesTreeNode>();
             ImagesTreeNode currentNode = imageNode;
             while (currentNode.ParentId != Guid.Empty)

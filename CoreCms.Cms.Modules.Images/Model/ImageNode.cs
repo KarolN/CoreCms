@@ -9,7 +9,7 @@ namespace CoreCms.Cms.Modules.Images.Model
 
         public override ContentReference GetContentReference()
         {
-            return new ImageReference { ImageId = ImageId, Name = Name};
+            return new ImageReference { ContentId = ImageId, Name = Name};
         }
     }
 }

@@ -6,7 +6,7 @@ namespace CoreCms.Cms.Modules.Pages.Model
     {
         public override ContentReference GetReference()
         {
-            return new PageReference{Name = Name, PageId = Id, PageType = this.GetType().Name};
+            return new PageReference{Name = Name, ContentId = Id, PageType = this.GetType().Name};
         }
     }
 }

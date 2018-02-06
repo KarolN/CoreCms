@@ -1,6 +1,7 @@
 ﻿using System;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Contract.Services;
+using CoreCms.Cms.Modules.Images.Model;
 using CoreCms.Cms.Modules.Images.RoutingProvider;
 
 namespace CoreCms.Cms.Modules.Images
@@ -20,6 +21,11 @@ namespace CoreCms.Cms.Modules.Images
         public Type GetRoutingHandlerType()
         {
             return typeof(CmsImageRoutingHandler);
+        }
+
+        public Type GetContentReferenceType()
+        {
+            return typeof(ImageReference);
         }
     }
 }

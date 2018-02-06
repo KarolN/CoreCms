@@ -27,7 +27,7 @@ namespace CoreCms.Cms.Modules.Pages.Services
                 throw new ArgumentException("Incorrect content reference");
             }
 
-            var page = _pageRepository.GetQueryable().SingleOrDefault(x => x.Id == pageReference.PageId);
+            var page = _pageRepository.GetQueryable().SingleOrDefault(x => x.Id == pageReference.ContentId);
             return page;
         }
     }

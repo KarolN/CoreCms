@@ -24,7 +24,7 @@ namespace CoreCms.Cms.Modules.Images.Services
             {
                 return null;
             }
-            var image = _imageRepository.GetQueryable().SingleOrDefault(x => x.Id == imageReference.ImageId);
+            var image = _imageRepository.GetQueryable().SingleOrDefault(x => x.Id == imageReference.ContentId);
             return image;
         }
     }

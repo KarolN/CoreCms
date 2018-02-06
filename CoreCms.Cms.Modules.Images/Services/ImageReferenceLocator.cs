@@ -43,7 +43,7 @@ namespace CoreCms.Cms.Modules.Images.Services
                 return null;
             }
             
-            return new ImageReference{Name = imageNode.Name, ImageId = imageNode.ImageId};
+            return new ImageReference{Name = imageNode.Name, ContentId = imageNode.ImageId};
         }
     }
 }
