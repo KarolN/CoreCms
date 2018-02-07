@@ -1,4 +1,5 @@
 import contentTreeDataService from "~/services/contentTreeDataService"
+import editableContentService from "~/services/editableContentService"
 
 export const actions = {
     loadContentTypes : function(context){
@@ -13,10 +14,27 @@ export const actions = {
         });
     },
 
-    selectContentNode(context, contentNode){
+    selectContentNode(context, contentNode) {
         context.commit('selectContentNode', contentNode);
 
-        let editable = {name: contentNode.name};
-        context.commit('loadEditableContent', editable)
+        editableContentService.getEditableContent(contentNode.contentReference).then(function (response) {
+            context.commit('loadEditableContent', response.data)
+        });
+    },
+
+    updateEditableProperty(context, property){
+        context.commit('updateEditableProperty', property);
+    },
+
+    loadPropertyEditorsSettings(context){
+        editableContentService.getPropertyEditorsSettings().then(function(response){
+            context.commit('loadPropertyEditors', response.data);
+        })
+    },
+
+    saveEditableContent(context, content){
+        editableContentService.saveEditableContent(content).then(function(response){
+            context.commit('loadEditableContent', response.data);
+        });
     }
 };

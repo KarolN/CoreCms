@@ -14,6 +14,7 @@ namespace CoreCms.Cms.Core
             For<ICmsControllerActionDescriptorsProvider>().Use<CmsControllerActionDescriptorsProvider>();
             For<ICmsViewComponentsDescriptorsProvider>().Use<CmsViewComponentsDescriptorsProvider>();
             For<IContentLoader>().Use<ContentLoader>();
+            For<IContentWriter>().Use<ContentWriter>();
             For<IRenderingManager>().Singleton().Use<DefaultContentRenderingManager>();
             For<IContentUrlGenerator>().Singleton().Use<CmsContentUrlGenerator>();
 

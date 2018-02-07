@@ -12,7 +12,7 @@ namespace CoreCms.Cms.Modules.Pages
     {
         public PageModuleServicesRegistry()
         {
-            For<IContentReferenceLocator>().Use<PageReferenceLocator>().Named(PageConstants.ContentType);
+            For<IContentReferenceLocator>().Use<PageReferenceLocator>().Named(PageConstants.ContentType).Singleton();
             For<IPageTreeRepository>().Use<PageTreeRepository>();
             For<ICmsModuleDescriptor>().Use<PageModuleDescriptor>().Named(PageConstants.ContentType);
             For<IControllerActionResolver>().Use<PageActionResolver>().Named(PageConstants.ContentType);

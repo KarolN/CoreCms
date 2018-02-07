@@ -14,7 +14,7 @@ namespace CoreCms.Cms.Modules.Images
     {
         public ImagesModuleServicesRegistry()
         {
-            For<ICmsModuleDescriptor>().Use<ImagesModuleDescriptor>().Named(ImagesModuleConstants.ContentType);
+            For<ICmsModuleDescriptor>().Use<ImagesModuleDescriptor>().Named(ImagesModuleConstants.ContentType).Singleton();
             For<ICmsRoutingHandler>().Use<CmsImageRoutingHandler>().Named(ImagesModuleConstants.ContentType);
             For<IRepository<ImagesTreeNode>>().Use<MongoRepository<ImagesTreeNode>>();
             For<IRepository<Image>>().Use<MongoRepository<Image>>();

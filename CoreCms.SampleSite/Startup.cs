@@ -4,6 +4,8 @@ using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Cms.Core.Infrastructure;
 using CoreCms.Cms.Editor.WebApi.Controllers;
+using CoreCms.Cms.Editor.WebApi.JsonConverters;
+using CoreCms.Cms.Editor.WebApi.ModelBinders;
 using CoreCms.Cms.Modules.Images;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +33,7 @@ namespace CoreCms.SampleSite
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            var container = new Container();
             // Add framework services.
             services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
             {
@@ -41,9 +44,15 @@ namespace CoreCms.SampleSite
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(ContentModelBindFilter));
-            }).AddApplicationPart(typeof(ContentTypesController).GetTypeInfo().Assembly);
+                options.ModelBinderProviders.Insert(0, new ContentReferenceModelBinderProvider());
+            }).AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.Converters.Add(new ContentReferenceJsonConverter(container));
+                    options.SerializerSettings.Converters.Add(new EditablePropertyJsonConverter());
+                })
+                .AddApplicationPart(typeof(ContentTypesController).GetTypeInfo().Assembly);
 
-            var container = new Container();
+          
             container.Configure(cfg =>
             {
                 cfg.For<IConfigurationRoot>().Use(Configuration);

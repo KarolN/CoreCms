@@ -10,6 +10,8 @@ namespace CoreCms.Cms.Editor.Bussines
         {
             For<IContentTreeService>().Use<ContentTreeService>();
             For<IEditableContentGenerator>().Use<EditableContentGenerator>();
+            For<IPropertyEditorRegistry>().Use<PropertyEditorRegistry>().Singleton();
+            For<IEditableContentWriter>().Use<EditableContentWriter>();
         }
     }
 }

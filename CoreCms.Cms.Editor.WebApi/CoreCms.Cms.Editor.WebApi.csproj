@@ -18,6 +18,9 @@
     <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
       <HintPath>..\..\..\.nuget\packages\microsoft.aspnetcore.mvc.viewfeatures\2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap, Version=4.5.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\.nuget\packages\structuremap\4.5.0\lib\netstandard1.5\StructureMap.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoreCms.Cms.Editor.Bussines.Contract\CoreCms.Cms.Editor.Bussines.Contract.csproj">

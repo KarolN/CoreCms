@@ -5,5 +5,7 @@ export const state = {
     contentTypes: [],
     contentTrees: [],
     selectedContentNode: {},
-    editableContent: {}
+    editableContent: {},
+    editableState: {},
+    propertyEditorsSettings: []
 };

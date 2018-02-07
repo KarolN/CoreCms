@@ -9,6 +9,7 @@ namespace CoreCms.Cms.Editor.Bussines.Services
     public class EditableContentGenerator : IEditableContentGenerator
     {
         private readonly IContentLoader _contentLoader;
+        private readonly List<string> _notEditableProperies = new List<string>{"Id", "CollectionName"};
 
         public EditableContentGenerator(IContentLoader contentLoader)
         {
@@ -31,9 +32,14 @@ namespace CoreCms.Cms.Editor.Bussines.Services
 
             foreach (var propertyInfo in properties)
             {
+                if(_notEditableProperies.Contains(propertyInfo.Name))
+                {
+                    continue;
+                }
                 var editableProperty = new EditableProperty();
                 editableProperty.Name = propertyInfo.Name;
                 editableProperty.Type = propertyInfo.PropertyType.Name;
+                editableProperty.FullTypeName = propertyInfo.PropertyType.AssemblyQualifiedName;
                 editableProperty.Value = propertyInfo.GetValue(content);
                 editableProps.Add(editableProperty);
             }

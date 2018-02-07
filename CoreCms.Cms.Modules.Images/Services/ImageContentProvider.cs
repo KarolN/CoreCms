@@ -27,5 +27,10 @@ namespace CoreCms.Cms.Modules.Images.Services
             var image = _imageRepository.GetQueryable().SingleOrDefault(x => x.Id == imageReference.ContentId);
             return image;
         }
+
+        public void UpdateContent(Content content)
+        {
+            
+        }
     }
 }

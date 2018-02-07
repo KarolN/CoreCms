@@ -6,6 +6,7 @@ using CoreCms.Cms.Core.Contract.Model.Content;
 using CoreCms.Cms.Core.Contract.Services;
 using CoreCms.Common.Utils.Extensions;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using StructureMap;
 
 namespace CoreCms.Cms.Editor.WebApi.ModelBinders
 {

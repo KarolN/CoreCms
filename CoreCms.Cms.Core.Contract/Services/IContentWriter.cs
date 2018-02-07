@@ -2,9 +2,8 @@
 
 namespace CoreCms.Cms.Core.Contract.Services
 {
-    public interface IContentProvider : ICmsModuleService
+    public interface IContentWriter
     {
-        Content GetContent(ContentReference contentReference);
         void UpdateContent(Content content);
     }
 }
