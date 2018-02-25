@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreCms.Cms.Core.Contract\CoreCms.Cms.Core.Contract.csproj">
+      <Project>{E472C2B4-04B6-4CAE-A500-02BB27CF720D}</Project>
+      <Name>CoreCms.Cms.Core.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreCms.Cms.Core\CoreCms.Cms.Core.csproj">
+      <Project>{A93851EA-18E2-4CB0-A04C-D95047330DD5}</Project>
+      <Name>CoreCms.Cms.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreCms.Cms.Editor.WebApi\CoreCms.Cms.Editor.WebApi.csproj">
+      <Project>{8BEDB15B-3849-4776-8460-3C3C410B857F}</Project>
+      <Name>CoreCms.Cms.Editor.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
+    <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
+  </ItemGroup>
+</Project>

@@ -16,5 +16,9 @@
     <ProjectReference Include="..\CoreCms.Cms.Modules.Images\CoreCms.Cms.Modules.Images.csproj" />
     <ProjectReference Include="..\CoreCms.Cms.Modules.Pages\CoreCms.Cms.Modules.Pages.csproj" />
     <ProjectReference Include="..\CoreCms.DataAccess\CoreCms.DataAccess.csproj" />
+    <ProjectReference Include="..\CoreCms.Framework\CoreCms.Framework.csproj">
+      <Project>{6515D4E8-34D1-4C0C-A67C-D092C7922C4C}</Project>
+      <Name>CoreCms.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -7,6 +7,7 @@ using CoreCms.Cms.Editor.WebApi.Controllers;
 using CoreCms.Cms.Editor.WebApi.JsonConverters;
 using CoreCms.Cms.Editor.WebApi.ModelBinders;
 using CoreCms.Cms.Modules.Images;
+using CoreCms.Framework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -33,39 +34,7 @@ namespace CoreCms.SampleSite
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            var container = new Container();
-            // Add framework services.
-            services.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
-            {
-                builder.AllowAnyOrigin()
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
-            }));
-            services.AddMvc(options =>
-            {
-                options.Filters.Add(typeof(ContentModelBindFilter));
-                options.ModelBinderProviders.Insert(0, new ContentReferenceModelBinderProvider());
-            }).AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.Converters.Add(new ContentReferenceJsonConverter(container));
-                    options.SerializerSettings.Converters.Add(new EditablePropertyJsonConverter());
-                })
-                .AddApplicationPart(typeof(ContentTypesController).GetTypeInfo().Assembly);
-
-          
-            container.Configure(cfg =>
-            {
-                cfg.For<IConfigurationRoot>().Use(Configuration);
-                cfg.Scan(x =>
-                {
-                    x.AssembliesAndExecutablesFromApplicationBaseDirectory();
-                    x.LookForRegistries();
-                });
-                
-                cfg.Populate(services);
-            });
-
-            return container.GetInstance<IServiceProvider>();
+            return services.AddCoreCms(Configuration, options => { }, builder => { }, expression => { });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -84,16 +53,9 @@ namespace CoreCms.SampleSite
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseCors("CorsPolicy");
             app.UseStaticFiles();
 
-            var router = app.ApplicationServices.GetService<ICmsRouter>();
-
-            app.UseMvc(routes =>
-            {
-                routes.Routes.Add(router);
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseCoreCms(routes => { });
         }
     }
 }
