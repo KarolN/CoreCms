@@ -11,6 +11,10 @@
       <Project>{93E15CCD-F3D8-4C37-99A0-2A738E2988C9}</Project>
       <Name>CoreCms.Cms.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CoreCms.Common.Utils\CoreCms.Common.Utils.csproj">
+      <Project>{1E41F2F1-F21B-45B7-9F32-EC61375BDD47}</Project>
+      <Name>CoreCms.Common.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="StructureMap, Version=4.5.0.0, Culture=neutral, PublicKeyToken=null">

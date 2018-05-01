@@ -17,6 +17,7 @@ namespace CoreCms.Cms.Core
             For<IContentWriter>().Use<ContentWriter>();
             For<IRenderingManager>().Singleton().Use<DefaultContentRenderingManager>();
             For<IContentUrlGenerator>().Singleton().Use<CmsContentUrlGenerator>();
+            For<IContentTemplateLoader>().Singleton().Use<ContentTemplateLoader>();
 
             For<IContentRenderer>().Singleton().Use<IntegerContentRenerer>();
             For<IContentRenderer>().Singleton().Use<StringContentRenerer>();

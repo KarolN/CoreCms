@@ -23,6 +23,7 @@ namespace CoreCms.Cms.Modules.Images
             For<IContentProvider>().Use<ImageContentProvider>().Named(ImagesModuleConstants.ContentType);
             For<IContentUrlProvider>().Use<ImageUrlProvider>().Named(ImagesModuleConstants.ContentType);
             For<IContentTreeProvider>().Use<ImageTreeProvider>().Named(ImagesModuleConstants.ContentType);
+            For<IContentTemplateProvider>().Use<ImageTemplatesProvider>().Named(ImagesModuleConstants.ContentType);
         }   
     }
 }

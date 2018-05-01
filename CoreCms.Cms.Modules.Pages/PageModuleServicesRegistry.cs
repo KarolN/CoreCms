@@ -20,6 +20,7 @@ namespace CoreCms.Cms.Modules.Pages
             For<IContentProvider>().Use<PageContentProvider>().Named(PageConstants.ContentType);
             For<IContentUrlProvider>().Use<PageUrlProvider>().Named(PageConstants.ContentType);
             For<IContentTreeProvider>().Use<PageTreeProvider>().Named(PageConstants.ContentType);
+            For<IContentTemplateProvider>().Use<PageTemplatesProvider>().Named(PageConstants.ContentType);
         }
     }
 } 

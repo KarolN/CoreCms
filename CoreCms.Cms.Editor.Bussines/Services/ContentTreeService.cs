@@ -10,11 +10,14 @@ namespace CoreCms.Cms.Editor.Bussines.Services
     public class ContentTreeService : IContentTreeService
     {
         private readonly List<ICmsModuleDescriptor> _moduleDescriptors;
+        private readonly IContentTemplateLoader _contentTemplateLoader;
         private readonly Dictionary<string, IContentTreeProvider> _contentTreeProviders;
 
-        public ContentTreeService(List<ICmsModuleDescriptor> moduleDescriptors, List<IContentTreeProvider> contentTreeProviders)
+        public ContentTreeService(List<ICmsModuleDescriptor> moduleDescriptors, List<IContentTreeProvider> contentTreeProviders,
+            IContentTemplateLoader contentTemplateLoader)
         {
             _moduleDescriptors = moduleDescriptors;
+            _contentTemplateLoader = contentTemplateLoader;
             _contentTreeProviders = contentTreeProviders.ToDictionary(x => x.GetContentTypeName(), x => x);
         }
         
@@ -33,6 +36,17 @@ namespace CoreCms.Cms.Editor.Bussines.Services
             }
 
             return _contentTreeProviders[contentType].GetContentTreeDto();
+        }
+
+        public List<ContentTemplateDto> GetContentTemplates(string contentType)
+        {
+            var templates = _contentTemplateLoader.LoadAllTemplates(contentType);
+            return templates.Select(x => new ContentTemplateDto()
+            {
+                ContentType = x.ContentType,
+                Name = x.Name,
+                TemplateTypeFullName = x.TemplateTypeFullName
+            }).ToList();
         }
     }
 }

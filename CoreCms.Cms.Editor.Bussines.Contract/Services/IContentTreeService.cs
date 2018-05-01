@@ -7,5 +7,6 @@ namespace CoreCms.Cms.Editor.Bussines.Contract.Services
     {
         List<ContentTypeDto> GetContentTypes();
         ContentTreeDto GetContentTree(string contentType);
+        List<ContentTemplateDto> GetContentTemplates(string contentType);
     }
 }

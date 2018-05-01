@@ -40,5 +40,36 @@ namespace CoreCms.Cms.Modules.Pages.Services
             pageTreeContent.Name = content.Name;
             _pageTreeRepository.Update(pageTreeContent);
         }
+
+        public Content SaveContent(Content content, Guid parent)
+        {
+            var pageContent = content as Page;
+            if (pageContent == null)
+            {
+                throw new ArgumentException("Content to save is not page content");
+            }
+
+            var parentPage = _pageRepository.GetQueryable().SingleOrDefault(x => x.Id == parent);
+            if (parentPage == null)
+            {
+                throw new ArgumentException($"Parent with id {parent} not found");
+            }
+
+            var parentTreeElement = _pageTreeRepository.GetQueryable().Single(x => x.PageId == parent);
+
+            var id = _pageRepository.Insert(pageContent);
+            content.Id = id;
+            
+            var newPageTreeElement = new PageTreeNode()
+            {
+                PageId = id,
+                Name = content.Name,
+                ParentId = parentTreeElement.Id,
+                PageType = content.GetType().Name
+            };
+            _pageTreeRepository.Insert(newPageTreeElement);
+
+            return content;
+        }
     }
 }

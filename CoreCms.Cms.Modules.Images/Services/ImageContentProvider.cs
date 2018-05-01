@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using CoreCms.Cms.Core.Contract;
 using CoreCms.Cms.Core.Contract.Model.Content;
@@ -31,6 +32,11 @@ namespace CoreCms.Cms.Modules.Images.Services
         public void UpdateContent(Content content)
         {
             
+        }
+
+        public Content SaveContent(Content content, Guid parent)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
