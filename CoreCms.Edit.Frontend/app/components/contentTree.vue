@@ -2,7 +2,7 @@
     <div>
         <v-container flex>
         <ul class="content-tree__root-list">
-            <content-tree-item :element="root"></content-tree-item>
+            <content-tree-item :element="root()"></content-tree-item>
         </ul>
         </v-container>
     </div>
@@ -16,9 +16,10 @@
         data: function () {
             return {}
         },
-        computed:{
+
+        methods: {
             root() {
-                var tree = this.$store.getters.getContentTree(this.contentType);
+                let tree = this.$store.getters.getContentTree(this.contentType);
                 return tree.root;
             }
         },

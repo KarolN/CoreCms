@@ -3,6 +3,7 @@ import Vuetify from 'vuetify'
 import ContentBrowser from './components/contentBrowser.vue'
 import ContentTree from './components/contentTree.vue'
 import ExpandableList from './components/contentTreeItem.vue'
+import NewContentModal from './components/newContentModal.vue'
 import ContentEditor from './components/contentEditor.vue'
 import Store from './store/index'
 

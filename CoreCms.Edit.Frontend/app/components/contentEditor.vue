@@ -47,6 +47,7 @@
                 </v-card>
             </v-flex>
         </v-layout>
+        <new-content-modal></new-content-modal>
     </v-container>
 </template>
 

@@ -22,7 +22,7 @@
                             </v-btn>
                             <v-list>
                                 <v-list-tile>
-                                    <v-list-tile-title>Add child</v-list-tile-title>
+                                    <v-list-tile-title v-on:click="openNewContentModal()">Add child</v-list-tile-title>
                                 </v-list-tile>
                                 <v-list-tile>
                                     <v-list-tile-title>Remove</v-list-tile-title>
@@ -64,6 +64,9 @@
             },
             select: function () {
                 this.$store.dispatch('selectContentNode', this.element);
+            },
+            openNewContentModal: function(){
+                this.$store.dispatch('newContentModule/openNewContentModal', this.element.contentReference);
             }
         }
     })

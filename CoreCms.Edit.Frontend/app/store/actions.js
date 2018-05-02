@@ -36,5 +36,22 @@ export const actions = {
         editableContentService.saveEditableContent(content).then(function(response){
             context.commit('loadEditableContent', response.data);
         });
+    },
+
+    createNewContent(context){
+        let newContent = {
+            name: context.state.newContentModule.newContentName,
+            parentId: context.state.newContentModule.newContentModalData.parentId,
+            contentTemplate: context.state.newContentModule.selectedTemplate
+        };
+
+        editableContentService.createNewContent(newContent).then(response => {
+            context.dispatch('loadContentTree', response.data.contentType);
+            let contentNode = {
+                contentReference: response.data
+            };
+            context.dispatch('selectContentNode', contentNode);
+            context.dispatch('newContentModule/closeNewContentModal')
+        });
     }
 };

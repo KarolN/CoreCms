@@ -8,5 +8,8 @@ export default  {
     },
     getContentTree: function(contentType){
         return client.get('contentTree', {params:{contentType: contentType}});
+    },
+    getContentTemplates: function(contentType){
+        return client.get('contentTemplates', {params:{contentType: contentType}})
     }
 };

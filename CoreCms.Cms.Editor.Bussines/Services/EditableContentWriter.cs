@@ -40,5 +40,18 @@ namespace CoreCms.Cms.Editor.Bussines.Services
                 }
             }
         }
+
+        public ContentReference CreateContent(NewContentDto newContentDto)
+        {
+            var template = new ContentTemplate
+            {
+                ContentType = newContentDto.ContentTemplate.ContentType,
+                Name = newContentDto.ContentTemplate.Name,
+                TemplateTypeFullName = newContentDto.ContentTemplate.TemplateTypeFullName
+            };
+            var content = _contentWriter.CreateContent(newContentDto.Name, newContentDto.ParentId,
+                template);
+            return content.GetReference();
+        }
     }
 }

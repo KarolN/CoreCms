@@ -13,5 +13,9 @@ export default  {
 
     saveEditableContent(content){
         return client.put('editableContent', content);
+    },
+
+    createNewContent(content){
+        return client.post('content', content);
     }
 };

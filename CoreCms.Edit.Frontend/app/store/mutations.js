@@ -35,7 +35,7 @@ export const mutations = {
         }
     },
 
-    loadPropertyEditors(state, editors){
+    loadPropertyEditors(state, editors) {
         state.propertyEditorsSettings = editors;
     }
-}
+};
