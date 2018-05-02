@@ -20,5 +20,11 @@ namespace CoreCms.Cms.Core.Infrastructure
             var provider = _contentProviders.Single(x => x.GetContentTypeName() == contentReference.ContentType);
             return provider.GetContent(contentReference);
         }
+
+        public List<ContentReference> LoadChildren(ContentReference parentReference)
+        {
+            var provider = _contentProviders.Single(x => x.GetContentTypeName() == parentReference.ContentType);
+            return provider.GetChidren(parentReference);
+        }
     }
 }

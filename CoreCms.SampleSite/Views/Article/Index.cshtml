@@ -1,4 +1,4 @@
-﻿@model CoreCms.SampleSite.Pages.ArticlePage
+﻿@model CoreCms.SampleSite.Controllers.ArticlePageViewModel
 @using CoreCms.Cms.Core.HtmlExtensions
 @using CoreCms.SampleSite.Pages
 @{
@@ -7,6 +7,13 @@
 }
 
 <h1>Article</h1> 
-<cms-content content="@Model.Title"></cms-content>
-<a cms-content-href="@Model.Other">Other page</a>
-<cms-content content="@Model.Image1"></cms-content>
+<h2><cms-content content="@Model.ArticlePage.Title"></cms-content></h2>
+<h3>Child pages</h3>
+@foreach (var child in Model.ChildPages)
+{
+    <div>
+    <a cms-content-href="@child">@child.Name</a>
+    </div>
+}
+<a cms-content-href="@Model.ArticlePage.Other">Other page</a>
+<cms-content content="@Model.ArticlePage.Image1"></cms-content>

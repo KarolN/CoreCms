@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -70,6 +71,14 @@ namespace CoreCms.Cms.Modules.Pages.Services
             _pageTreeRepository.Insert(newPageTreeElement);
 
             return content;
+        }
+
+        public List<ContentReference> GetChidren(ContentReference parentReference)
+        {
+            var pageNode = _pageTreeRepository.GetQueryable().Single(x => x.PageId == parentReference.ContentId);
+            var childNodes = _pageTreeRepository.GetQueryable().Where(x => x.ParentId == pageNode.Id).ToList();
+
+            return childNodes.Select(x => x.ToContentReference()).ToList();
         }
     }
 }

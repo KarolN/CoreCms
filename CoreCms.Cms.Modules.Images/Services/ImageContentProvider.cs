@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using CoreCms.Cms.Core.Contract;
@@ -37,6 +38,11 @@ namespace CoreCms.Cms.Modules.Images.Services
         public Content SaveContent(Content content, Guid parent)
         {
             throw new System.NotImplementedException();
+        }
+
+        public List<ContentReference> GetChidren(ContentReference parentReference)
+        {
+            throw new NotImplementedException();
         }
     }
 }
